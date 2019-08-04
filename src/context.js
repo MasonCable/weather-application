@@ -7,14 +7,15 @@ const Context = React.createContext()
 //This function is for handling search
 const reducer = (state, action) => {
     switch(action.type){
-        case 'SEARCH_TRACKS': 
+        case 'FIND_ZIPCODE': 
           return {
               ...state,
-              cityList: action.payload,
+              singleCity: action.payload,
               heading: 'Search Results'
           }
           default :
             return state
+        
     }
 }
 
@@ -59,12 +60,13 @@ export class Provider extends Component {
               }
         ],
         heading: 'Cities',
+        singleCity:[],
         dispatch: action => this.setState(state => reducer(state, action))
     }
 
     componentDidMount() {
         //  PUT GLOBAL API CALL HERE
-        console.log(this.state.cityList)
+        // console.log(this.state.cityList)
     }
 
     render(){

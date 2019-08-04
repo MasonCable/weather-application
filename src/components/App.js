@@ -15,7 +15,7 @@ class App extends Component {
         <Router>
           <React.Fragment>
             <Route exact path ='/' component = {Preset}/>
-            <Route exact path = '/info' component ={InfoPage}/>
+            <Route exact path = '/info/:id' component ={InfoPage}/>
           </React.Fragment>
         </Router>
       </Provider>
