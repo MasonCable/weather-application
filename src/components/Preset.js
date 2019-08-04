@@ -10,9 +10,9 @@ const Preset = () => {
                 const {cityList, heading} = value
                 return(
                     <React.Fragment>
-                        <div className="container" style={{display: 'flex', flexWrap: 'wrap'}}> 
+                        <div className="container" style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}> 
                             {cityList.map(item => (
-                                <PresetItem key={item.name} cityName={item.name} lon={item.lon} lat={item.lat}/>
+                                <PresetItem key={item.name} cityName={item.name} lon={item.lon} lat={item.lat} imgUrl={item.imgUrl}/>
                             ))}
                         </div>
                     </React.Fragment>

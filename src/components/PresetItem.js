@@ -18,15 +18,15 @@ class PresetItem extends React.Component {
         
     }
     render(){
-        const {cityName, lon, lat} = this.props
+        const {cityName, lon, lat, imgUrl} = this.props
         return(
-            <div className="m-2">
-                <div className="card" style={{width: 18 + 'em'}}>
-                    <img src={moscow} className="card-img-top" alt="..."/>
+            <div className="m-2 card" >
+                <div className="card-body" style={{width: 18 + 'em', justifyContent:'space-around'}}>
+                    <img src={imgUrl} className="card-img-top" alt="..."/>
                     <div className="card-body">
                         <h5 className="card-title">Hello from {cityName}</h5>
-                        <p className="card-text">{this.state.temp}</p>
-                        <a href="/" className="btn btn-primary">Go somewhere</a>
+                        <p className="card-text"> <strong>Temperature</strong>: {this.state.temp} 	&#176; F</p>
+                        
                 </div>
                 </div>
             </div>
