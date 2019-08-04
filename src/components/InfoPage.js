@@ -2,6 +2,12 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 class InfoPage extends Component {
+
+    componentDidMount() {
+        axios.get('https://cors-anywhere.herokuapp.com/https://wbm8wnbgla.execute-api.us-east-2.amazonaws.com/live/item').then(res => {
+            console.log(res.data)
+        }).catch(err => console.log(err))
+    }
     render(){
         return(
             <React.Fragment>

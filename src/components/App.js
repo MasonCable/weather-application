@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import '../styles/App.css'
 import Form from './Form'
 import InfoPage from './InfoPage'
-import axios from 'axios'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Provider } from '../context'
 
 

@@ -7,9 +7,9 @@ const apiKey = 'd5cb87e716a91af3a28e40e73bb74a37'
 
 class Form extends Component{
 	state = {
-    	temp: undefined,
-    	wind: undefined,
-    	humidity: undefined
+    	temp: null,
+    	wind: null,
+    	humidity: null
   	}
 
    getWeather = (e) =>{
@@ -49,12 +49,8 @@ class Form extends Component{
 		return(
 			<div className="container">
 			
-{/* 				
-				<h2>Temperature: <span className='info'>{this.state.temp}</span></h2>
-				<h2>Wind Speeds: <span className='info'>{this.state.wind}</span></h2>
-				<h2>Humidity: <span className='info'>{this.state.humidity}</span></h2>
-				 */}
-                 <div className="card card-body mb-4 p-4">
+
+                 {/* <div className="card card-body mb-4 p-4">
                             <h1 className="display-4 text-center">
                                 <i className="fas fa-music"></i> Search for a song
                             </h1>
@@ -73,10 +69,10 @@ class Form extends Component{
                                     Search
                                 </button>
                             </form>
-                        </div>
+                        </div> */}
 			
             <div className="link">
-                <Link to='/info'> <button type="button" class="btn btn-link">Link</button></Link>
+                <Link to='/info'> <button type="button" class="btn btn-link">This is a link</button></Link>
             </div>
 				<form onSubmit={this.getWeather}>
 					<input type="text" name="city" placeholder="Your City..." />

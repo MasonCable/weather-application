@@ -25,14 +25,7 @@ export class Provider extends Component {
     }
 
     componentDidMount() {
-        axios.get(`anyapi`)
-            .then(res => {
-                this.setState({
-                    track_list: res.data.message.body.track_list
-                })
-                // console.log(this.state.track_list)
-            })
-            .catch(err => console.log(err))
+        //  PUT GLOBAL API CALL HERE
     }
 
     render(){
