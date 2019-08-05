@@ -19,7 +19,7 @@ class PresetItem extends React.Component {
             let step1 = f - 32
             let step2 = step1 / 5
             let step3 = step2 + 32
-            console.log(step3)
+            // console.log(step3)  THIS CODE WORKS TO TURN FARENHEIGHT INTO CELCIUS 
         }).catch(err => (console.log(err)))
 
         

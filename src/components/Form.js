@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Consumer } from '../context'
 import axios from 'axios'
 
@@ -19,15 +19,19 @@ class Form extends Component{
    getWeather = (dispatch, e) =>{
       e.preventDefault()
        const zip = e.target.elements.zipcode.value
-      
-      axios.get(`https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=${apiKey}&units=imperial`)
-        .then(res =>{
-            // console.log(res.data)
+       
+       if(zip === ''){
+          alert('Please Provide A Zipcode')
+       }else {
+          axios.get(`https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=${apiKey}&units=imperial`)
+          .then(res => {
+            console.log(res.data)
             dispatch({
               type: 'FIND_ZIPCODE',
               payload: res.data
             })
           }).catch(err => console.log(err))
+       }
               
     }
 
@@ -51,7 +55,7 @@ class Form extends Component{
                         placeholder="Your Zipcode..."
                         onChange={this.onChange.bind(this)} />  
                         <br/>
-                <Link to={`/info/${this.state.zipLocation}`}><button className="btn btn-warning ml-1" style={{width: 100 + '%'}} onClick={this.props.handleClick} type="submit">Search</button></Link>
+                <Link to={`/info/${this.state.zipLocation}`}><button className="btn btn-warning ml-1"  style={{width: 100 + '%'}} type="submit">Search</button></Link>
               </form>
             </div>
           )
